@@ -1,0 +1,19 @@
+img {
+    width: 100%;
+}
+
+.backgrod {
+    background: rosybrown;
+}
+
+.backgrod h1 {
+    padding: 4%;
+}
+
+#body {
+    margin-top: 20px;
+}
+
+.col-4 {
+    margin-top: 2%;
+}

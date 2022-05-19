@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/btl.css">
+    <title> list </title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="title">
+                <h2>Danh sách sinh viên</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <form action="" method="POST" role="form" id="creatform">
+                    <legend>Form Thêm mới</legend>
+                    <div class="form-group">
+                        <label for="Name-text" class="col-form-label">Name:</label>
+                        <input type="text" class="Name" id="Name">
+                        <div id="error_name" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Email-text" class="col-form-label">Email:</label>
+                        <input type="text" class="Email" id="Email">
+                        <div id="error_email" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone-text" class="col-form-label">Phone:</label>
+                        <input type="text" class="Phone" id="Phone">
+                        <div id="error_phone" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Address-text" class="col-form-label">Address:</label>
+                        <input type="text" class="Address" id="Address">
+                        <div id="error_addr" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="Password-text" class="col-form-label">Password:</label>
+                        <input type="text" class="Password" id="Password">
+                        <div id="error_pass" class="error"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-Password" class="col-form-label">Link
+                                Avatar:</label>
+                        <input type="text" placeholder="Link avatar ..." name="image" id="img">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-add">Creat</button>
+                </form>
+            </div>
+            <div class="col-md-10">
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Gmail</th>
+                            <th>Phone</th>
+                            <th>Address</th>
+                            <th>Password</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
+                    <tbody id="print">
+                    </tbody>
+                </table>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="updateprint">
+                                </div>
+                                <form id="updateform">
+                                    <div class="form-group">
+                                        <input type="hidden" id="id">
+                                        <label for="update-Name" class="col-form-label">Name:</label>
+                                        <input type="text" class="form-control" id="update-Name">
+                                        <div id="error_Name" class="error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="update-Gmail" class="col-form-label">Gmail:</label>
+                                        <input type="text" class="form-control" id="update-Gmail">
+                                        <div id="error_Email" class="error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="update-Phone" class="col-form-label">Phone:</label>
+                                        <input type="text" class="form-control" id="update-Phone">
+                                        <div id="error_Phone" class="error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="update-Address" class="col-form-label">Address:</label>
+                                        <input type="text" class="form-control" id="update-Address">
+                                        <div id="error_Addr" class="error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="update-Password" class="col-form-label">Password:</label>
+                                        <input type="text" class="form-control" id="update-Password">
+                                        <div id="error_Pass" class="error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="update-Password" class="col-form-label">Link
+                                                Avatar:</label>
+                                        <input type="text" name="image" id="update-img">
+                                    </div>
+                                    <button type="button" class="btn
+                                            btn-danger" data-dismiss="modal">Close</button>
+                                    <button type="button" class="btn
+                                            btn-warning btn-update">Update</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<script src="./bootstrap/js/bootstrap.js"></script>
+<script>
+    $('#exampleModal').on('show.bs.modal', function(event) {
+        var button = $(event.relatedTarget);
+        var update = button.data('whatever');
+        var modal = $(this);
+        modal.find('.modal-title').text(update);
+    })
+</script>
+<!-- Bootstrap JavaScript -->
+<script type="text/javascript" src="system.js"></script>
+<script type="text/javascript">
+    // index.js is the transpiled index.ts
+    SystemJS.import('./BTL.js');
+    SystemJS.import('./js/admin.js');
+</script>
+
+</html>

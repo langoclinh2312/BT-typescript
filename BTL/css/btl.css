@@ -1,0 +1,17 @@
+.btn {
+    margin: 2% 1%;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+input {
+    width: 100%;
+}
+
+.error {
+    font-style: italic;
+    color: red;
+}
